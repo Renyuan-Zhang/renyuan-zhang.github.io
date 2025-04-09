@@ -7,9 +7,17 @@
   <meta name="description" content="Stefanie Zhang's minimalist tech portfolio site" />
   <title>Stefanie Zhang | Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a2d9c62c84.js" crossorigin="anonymous"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
   <script>
-    // Toggle dark mode manually if needed
     function toggleDarkMode() {
       const html = document.documentElement;
       if (html.classList.contains('dark')) {
@@ -21,7 +29,6 @@
       }
     }
 
-    // Set theme on load
     if (localStorage.theme === 'dark' ||
       (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
@@ -29,41 +36,55 @@
       document.documentElement.classList.remove('dark');
     }
   </script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
 </head>
 
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300">
-  <header class="py-8 px-4 md:px-16 flex justify-between items-center">
+  <header class="py-6 px-6 md:px-16 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
     <h1 class="text-2xl font-bold">Stefanie Zhang</h1>
     <button onclick="toggleDarkMode()" class="text-xl" title="Toggle dark/light mode">
       <i class="fas fa-moon"></i>
     </button>
   </header>
 
-  <main class="px-4 md:px-16">
-    <section class="text-center my-20">
-      <h2 class="text-4xl font-semibold mb-4">Welcome to My Portfolio</h2>
-      <p class="text-lg max-w-xl mx-auto">I'm an instructional designer passionate about creating impactful, user-centered learning experiences. Here you'll find my featured work and how to connect with me.</p>
-    </section>
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center text-center mt-16 mb-24 px-4">
+    <img src="https://via.placeholder.com/150" alt="Avatar" class="w-32 h-32 rounded-full mb-4 shadow-md" />
+    <h2 class="text-4xl font-bold mb-2">Stefanie Zhang</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-400">Instructional Designer · Learning Experience Creator</p>
+  </section>
 
-    <section id="contact" class="my-20">
-      <h2 class="text-3xl font-bold mb-6 text-center">Get in Touch</h2>
-      <div class="flex flex-col items-center gap-4">
-        <a href="mailto:your.email@example.com" class="hover:underline text-blue-500"><i class="fas fa-envelope mr-2"></i>your.email@example.com</a>
-        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="hover:underline text-blue-500"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+  <!-- Projects Section -->
+  <section id="projects" class="my-20 px-4">
+    <h2 class="text-3xl font-bold text-center mb-10">My Projects</h2>
+    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow hover:shadow-xl transition p-4">
+        <img src="https://via.placeholder.com/400x250.webp" alt="Project 1" class="rounded mb-4" loading="lazy" />
+        <h3 class="text-xl font-semibold mb-2">Project Title 1</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Brief description of the first project. Tools used, purpose, and outcomes.</p>
+        <a href="#" class="text-blue-500 hover:underline">View project →</a>
       </div>
-    </section>
-  </main>
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow hover:shadow-xl transition p-4">
+        <img src="https://via.placeholder.com/400x250.webp" alt="Project 2" class="rounded mb-4" loading="lazy" />
+        <h3 class="text-xl font-semibold mb-2">Project Title 2</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Brief description of the second project. Tools used, purpose, and outcomes.</p>
+        <a href="#" class="text-blue-500 hover:underline">View project →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="my-20">
+    <h2 class="text-3xl font-bold mb-6 text-center">Get in Touch</h2>
+    <div class="flex flex-col items-center gap-4">
+      <a href="mailto:your.email@example.com" class="hover:underline text-blue-500"><i class="fas fa-envelope mr-2"></i>your.email@example.com</a>
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="hover:underline text-blue-500"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+    </div>
+  </section>
 
   <footer class="text-center text-sm py-8 border-t border-gray-200 dark:border-gray-700">
     <p>© 2025 Stefanie Zhang. Built with TailwindCSS & GitHub Pages.</p>
   </footer>
 
-  <!-- Optional fade-in animation -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('opacity-0');
@@ -73,3 +94,4 @@
 </body>
 
 </html>
+
