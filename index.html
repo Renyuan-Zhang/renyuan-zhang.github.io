@@ -34,7 +34,7 @@
       font-family: 'Inter', sans-serif;
     }
     .footer-text p:first-child {
-      font-size: 1.5rem;
+      font-size: clamp(2rem, 9vw, 4rem);
       font-weight: 700;
       white-space: nowrap;
       overflow: hidden;
@@ -43,7 +43,7 @@
       animation: typing1 2.5s steps(30, end) forwards, blink 0.75s step-end infinite;
     }
     .footer-text p:last-child {
-      font-size: 1.125rem;
+      font-size: clamp(1.5rem, 7.5vw, 3.5rem);
       font-weight: 500;
       max-width: 400px;
       white-space: nowrap;
@@ -71,9 +71,9 @@
       gap: 1.25rem;
     }
     .nav-bar a {
-      font-size: 0.875rem;
+      font-size: clamp(1.25rem, 3vw, 2rem);
       color: #ffffff;
-      font-weight: 500;
+      font-family: 'Inter', sans-serif; font-weight: 500;
       text-decoration: none;
       border-bottom: 2px solid transparent;
       transition: all 0.2s;
