@@ -14,7 +14,7 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f3f4f6;
+      background-color: #7393B3; /* blue grey */
       color: #111827;
       display: flex;
       justify-content: center;
@@ -30,39 +30,70 @@
       left: 1rem;
       bottom: 1rem;
       text-align: left;
-      color: #374151;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
     }
     .footer-text p:first-child {
-      font-size: 1rem;
-      font-weight: 600;
+      font-size: 1.5rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #fff;
+      width: 0;
+      animation: typing1 2.5s steps(30, end) forwards, blink 0.75s step-end infinite;
     }
     .footer-text p:last-child {
-      font-size: 0.875rem;
-    }
-    .typewriter {
-      overflow: hidden;
+      font-size: 1.125rem;
+      font-weight: 500;
+      max-width: 400px;
       white-space: nowrap;
-      border-right: 2px solid rgba(0, 0, 0, 0.75);
+      overflow: hidden;
+      border-right: 2px solid #fff;
       width: 0;
-      animation: typing 4s steps(60, end) forwards, blink 0.75s step-end infinite;
+      animation: typing2 3s steps(60, end) 3s forwards, blink 0.75s step-end infinite 3s;
     }
-    @keyframes typing {
+    @keyframes typing1 {
       from { width: 0; }
-      to { width: 100%; }
+      to { width: 18ch; }
+    }
+    @keyframes typing2 {
+      from { width: 0; }
+      to { width: 60ch; }
     }
     @keyframes blink {
       50% { border-color: transparent; }
+    }
+    .nav-bar {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 1.25rem;
+    }
+    .nav-bar a {
+      font-size: 0.875rem;
+      color: #ffffff;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .nav-bar a:hover {
+      border-bottom: 2px solid #ffffff;
     }
   </style>
 </head>
 
 <body>
-  <div>
-    <h1 class="text-3xl md:text-5xl font-semibold max-w-2xl typewriter">Hi, I'm Renyuan, a learning experience designer based in Toronto, Ontario.</h1>
-  </div>
+  <nav class="nav-bar">
+    <a href="https://your-projects-page.com" target="_blank">Projects</a>
+    <a href="https://your-about-page.com" target="_blank">About</a>
+    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+  </nav>
+
   <div class="footer-text">
-    <p>Nice to see you :)</p>
-    <p>Hello, my name is Renyuan. I am passionate about design and inspired by people.</p>
+    <p>Nice to meet you :)</p>
+    <p>Hi, I'm Renyuan, a learning experience designer based in Toronto, Ontario.</p>
   </div>
 </body>
 
