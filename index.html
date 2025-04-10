@@ -34,34 +34,13 @@
       font-family: 'Inter', sans-serif;
     }
     .footer-text p:first-child {
-      font-size: clamp(2rem, 9vw, 4rem);
+      font-size: 1.25rem;
       font-weight: 700;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #fff;
-      width: 0;
-      animation: typing1 2.5s steps(30, end) forwards, blink 0.75s step-end infinite;
     }
     .footer-text p:last-child {
-      font-size: clamp(1.5rem, 7.5vw, 3.5rem);
+      font-size: 1rem;
       font-weight: 500;
       max-width: 400px;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #fff;
-      width: 0;
-      animation: typing2 3s steps(60, end) 3s forwards, blink 0.75s step-end infinite 3s;
-    }
-    @keyframes typing1 {
-      from { width: 0; }
-      to { width: 18ch; }
-    }
-    @keyframes typing2 {
-      from { width: 0; }
-      to { width: 60ch; }
-    }
-    @keyframes blink {
-      50% { border-color: transparent; }
     }
     .nav-bar {
       position: absolute;
@@ -71,9 +50,10 @@
       gap: 1.25rem;
     }
     .nav-bar a {
-      font-size: clamp(1.25rem, 3vw, 2rem);
+      font-size: 1rem;
       color: #ffffff;
-      font-family: 'Inter', sans-serif; font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
       text-decoration: none;
       border-bottom: 2px solid transparent;
       transition: all 0.2s;
