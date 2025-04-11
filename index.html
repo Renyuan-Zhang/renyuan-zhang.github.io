@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Renyuan Zhang | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-fireworks"></script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -19,6 +21,7 @@
       height: 100vh;
       position: relative;
       overflow: hidden;
+      color: #ffffff;
     }
 
     .nav-bar {
@@ -31,9 +34,8 @@
     }
 
     .nav-bar a {
-      font-family: 'Inter', sans-serif;
       font-size: 1.125rem;
-      color: #ffffff; /* ✅ 改为白色 */
+      color: #ffffff;
       text-decoration: none;
       font-weight: 500;
       border-bottom: 2px solid transparent;
@@ -48,7 +50,6 @@
       position: absolute;
       left: 2rem;
       bottom: 4rem;
-      color: #ffffff; /* ✅ 改为白色 */
       animation: fadeInUp 1.2s ease-out forwards;
       z-index: 2;
     }
@@ -69,12 +70,12 @@
       animation: fadeInUp 2s ease-out forwards;
     }
 
-    #fireworks-container {
+    #tsparticles {
       position: absolute;
       top: 0;
       right: 0;
-      width: 50vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       pointer-events: none;
       z-index: 1;
     }
@@ -108,69 +109,38 @@
 </head>
 
 <body>
+  <!-- Navigation Bar -->
   <nav class="nav-bar">
     <a href="https://your-projects-page.com" target="_blank">Projects</a>
     <a href="https://your-about-page.com" target="_blank">About</a>
     <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
   </nav>
 
+  <!-- Intro Text -->
   <div class="intro-text">
     <h1>Nice to meet you :)</h1>
     <p>Hi, I'm Renyuan, a Learning Experience Designer based in Toronto, Ontario.</p>
   </div>
 
-  <div id="fireworks-container"></div>
+  <!-- Fireworks Canvas -->
+  <div id="tsparticles"></div>
 
+  <!-- Fireworks Initialization -->
   <script>
-    tsParticles.load("fireworks-container", {
-      fullScreen: { enable: false },
-      background: { color: "transparent" },
-      emitters: {
-        direction: "top",
-        life: {
-          count: 0,
-          duration: 0.1,
-          delay: 0.4
+    tsParticles.load({
+      id: "tsparticles",
+      options: {
+        preset: "fireworks",
+        fullScreen: { enable: false },
+        background: { color: "transparent" },
+        emitters: {
+          direction: "top",
+          position: { x: 90, y: 50 }
         },
-        rate: {
-          delay: 0.15,
-          quantity: 1
-        },
-        size: {
-          width: 100,
-          height: 0
-        },
-        position: {
-          x: 100,
-          y: 100
-        }
-      },
-      particles: {
-        number: {
-          value: 0
-        },
-        life: {
-          count: 1,
-          duration: {
-            value: 1
+        particles: {
+          color: {
+            value: ["#ffffff", "#ffcc00", "#ff3366", "#33ccff"]
           }
-        },
-        shape: {
-          type: "circle"
-        },
-        size: {
-          value: { min: 1, max: 3 }
-        },
-        move: {
-          enable: true,
-          speed: { min: 10, max: 20 },
-          direction: "none",
-          outModes: {
-            default: "destroy"
-          }
-        },
-        color: {
-          value: ["#ffffff", "#ffcc00", "#ff3366", "#33ccff"]
         }
       }
     });
