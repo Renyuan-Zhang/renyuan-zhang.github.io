@@ -1,150 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Renyuan Zhang | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles-engine"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles-basic"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-fireworks"></script>
+  <title>Portfolio — Inspired by Hana</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #7fb3d5;
-      margin: 0;
-      height: 100vh;
-      position: relative;
-      overflow: hidden;
-      color: #ffffff;
+      background-color: #fafaf5;
     }
-
-    .nav-bar {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      display: flex;
-      gap: 2rem;
-      z-index: 2;
+    .nav-link:hover {
+      border-bottom: 2px solid #4f46e5;
     }
-
-    .nav-bar a {
-      font-size: 1.125rem;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 500;
-      border-bottom: 2px solid transparent;
-      transition: all 0.2s ease-in-out;
+    .nav-link.active {
+      border: 2px solid #4f46e5;
+      border-radius: 9999px;
+      padding: 0.25rem 0.75rem;
     }
-
-    .nav-bar a:hover {
-      border-bottom: 2px solid #ffffff;
-    }
-
-    .intro-text {
-      position: absolute;
-      left: 2rem;
-      bottom: 4rem;
-      animation: fadeInUp 1.2s ease-out forwards;
-      z-index: 2;
-    }
-
-    .intro-text h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      margin: 0;
-      white-space: nowrap;
-      animation: fadeInUp 1.5s ease-out forwards;
-    }
-
-    .intro-text p {
-      font-size: 2.25rem;
-      font-weight: 500;
-      margin: 1rem 0 0 0;
-      white-space: nowrap;
-      animation: fadeInUp 2s ease-out forwards;
-    }
-
-    #tsparticles {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .intro-text h1 {
-        font-size: 2.5rem;
-      }
-
-      .intro-text p {
-        font-size: 1.5rem;
-      }
-
-      .nav-bar a {
-        font-size: 1rem;
-      }
+    .arch-image {
+      clip-path: ellipse(50% 80% at 50% 45%);
     }
   </style>
 </head>
+<body class="relative min-h-screen text-[#1f2937]">
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-8 py-6">
+    <!-- Logo -->
+    <div class="text-sm font-semibold border border-blue-600 text-blue-600 rounded-full px-3 py-1">HN</div>
+    <!-- Nav Tabs -->
+    <nav class="space-x-6 text-blue-700 font-semibold text-sm">
+      <a href="#" class="nav-link active">HOME</a>
+      <a href="#" class="nav-link">ABOUT</a>
+      <a href="#" class="nav-link">PLAY</a>
+      <a href="#" class="nav-link">RESUME</a>
+    </nav>
+  </header>
 
-<body>
-  <!-- Navigation Bar -->
-  <nav class="nav-bar">
-    <a href="https://your-projects-page.com" target="_blank">Projects</a>
-    <a href="https://your-about-page.com" target="_blank">About</a>
-    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
-  </nav>
+  <!-- Hero Section -->
+  <section class="flex flex-col-reverse lg:flex-row items-center justify-between px-8 lg:px-24 py-16">
+    <!-- Text -->
+    <div class="max-w-2xl">
+      <h1 class="text-4xl sm:text-5xl font-bold text-blue-800 mb-4">
+        Hey, this is Renyuan. <span class="text-blue-600 font-normal">(ha-nuh)</span>.
+      </h1>
+      <p class="text-lg text-blue-700 font-medium max-w-xl">
+        A Learning Experience Designer turns “meh” training into “aha!” moments.
+      </p>
+    </div>
 
-  <!-- Intro Text -->
-  <div class="intro-text">
-    <h1>Nice to meet you :)</h1>
-    <p>Hi, I'm Renyuan, a Learning Experience Designer based in Toronto, Ontario.</p>
-  </div>
-
-  <!-- Fireworks Canvas -->
-  <div id="tsparticles"></div>
-
-  <!-- Fireworks Initialization -->
-  <script>
-    tsParticles.load({
-      id: "tsparticles",
-      options: {
-        preset: "fireworks",
-        fullScreen: { enable: false },
-        background: { color: "transparent" },
-        emitters: {
-          direction: "top",
-          position: { x: 90, y: 50 }
-        },
-        particles: {
-          color: {
-            value: ["#ffffff", "#ffcc00", "#ff3366", "#33ccff"]
-          }
-        }
-      }
-    });
-  </script>
+    <!-- Image -->
+    <div class="w-60 h-auto mb-10 lg:mb-0">
+      <img src="https://unsplash.com/s/photos/image" alt="Portrait" class="arch-image object-cover w-full h-auto" />
+    </div>
+  </section>
 </body>
-
 </html>
